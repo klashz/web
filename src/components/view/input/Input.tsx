@@ -5,7 +5,7 @@ interface MyInputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 const MyInput: React.FC<MyInputProps> = (props) => {
   return (
-    <input className={classes.myInput} {...props} />
+    <input aria-label="exists" className={classes.myInput} {...props} />
   );
 };
 

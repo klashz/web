@@ -17,6 +17,7 @@ const MySelect: React.FC<MySelectProps> = ({ options, defaultValue, value, onCha
     <select
       value={value}
       onChange={(event) => onChange(event.target.value)}
+      data-testid="select-block"
     >
       <option disabled value="">{defaultValue}</option>
       {options.map((option) => (

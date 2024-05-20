@@ -1,3 +1,4 @@
+import 'intersection-observer';
 import React, { useEffect, useState, useRef } from 'react';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
@@ -16,7 +17,6 @@ import IFilter from './components/Filter';
 
 
 const Posts: React.FC = () => {
-  let totalCount = 0;
   const [posts, setPosts] = useState<Post[]>([]);
   const [filter, setFilter] = useState<IFilter>({ sort: '', query: '' });
   const [modal, setModal] = useState(false);
@@ -67,7 +67,7 @@ const Posts: React.FC = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App" data-testid="App">
       
       <PostFilter filter={filter} setFilter={setFilter} />
       {result.error && <h1>Error ${result.error}</h1>}
