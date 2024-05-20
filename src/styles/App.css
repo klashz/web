@@ -9,8 +9,7 @@
     justify-content: center;
   
     .App {
-      width: 800px;
-  
+      width: 1200px;
       .post {
         display: flex;
         padding: 15px;

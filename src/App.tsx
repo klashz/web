@@ -16,11 +16,12 @@ import IFilter from './components/Filter';
 
 
 const Posts: React.FC = () => {
+  let totalCount = 0;
   const [posts, setPosts] = useState<Post[]>([]);
   const [filter, setFilter] = useState<IFilter>({ sort: '', query: '' });
   const [modal, setModal] = useState(false);
   const [totalPages, setTotalPages] = useState(0);
-  const [limit] = useState(9);
+  const [limit] = useState(10);
   const [page, setPage] = useState(1);
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
   const lastElement = useRef<HTMLDivElement>(null);
@@ -78,7 +79,7 @@ const Posts: React.FC = () => {
       </MyModal>
       <PostList remove={removePost} posts={sortedAndSearchedPosts} />
       
-      <div ref={lastElement} />
+      <div ref={lastElement} style={{height: 50, background: 'gray'}} />
       {result.isLoading && (
         <div style={{ display: "flex", justifyContent: "center", margin: 50}}>
           <Loader />
