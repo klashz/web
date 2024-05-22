@@ -88,6 +88,6 @@ const Posts: React.FC = () => {
       <Pagination page={page} changePage={changePage} totalPages={totalPages} />
     </div>
   );
-};
+}
 
 export default Posts;
