@@ -19,7 +19,7 @@ const MyModal: React.FC<MyModalProps> = ({ children, visible, setVisible }) => {
   };
 
   return (
-    <div className={rootClasses.join(" ")} onClick={closeModal}>
+    <div data-testid="modal-block" className={rootClasses.join(" ")} onClick={closeModal}>
       <div className={cl.ModalContent} onClick={(e) => e.stopPropagation()}>
         {children}
       </div>

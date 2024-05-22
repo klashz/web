@@ -11,7 +11,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalPages, page, changePage })
   let pagesArray = getPagesArray(totalPages);
   
   return (
-    <div className="page__wrapper">
+    <div className="page__wrapper" data-testid="wrapper">
       {pagesArray.map((p: number) => (
         <span
           onClick={() => changePage(p)}
